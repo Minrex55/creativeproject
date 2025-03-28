@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container-fluid{
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: url(desierto.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .degradado{
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(to left, #4d689e, 80%, rgba(255, 0, 0, 0));
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .textcontainer{
+            width: 100%;
+            height: 75%;
+        }
+
+        .text1{
+            color: #fff;
+            justify-self: right;
+            margin-right: 5%;
+            font-size: 25px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+       .text2{
+            color: #fff;
+            justify-self: right;
+            margin-right: 5%;
+            margin-top: -30px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
+       .text2 p{
+        font-size: 85px;
+       }
+
+       .text3{
+            color: #fff;
+            justify-self: right;
+            margin-top: 50px;
+            margin-right: 5%;
+            margin-left: 5%;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: right;
+            font-size: 20px;
+       }
+
+       .btn-custom{
+            background-color: #fff;
+            border-radius: 55px;
+            color: #4d689e;
+            width: 170px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            transition: all 0.3s ease;
+       }
+       
+       .btn-custom:hover {
+            background-color: #f8f9fa;
+            color: #3a517c;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+       }
+
+       @media (max-width: 768px) {
+            .degradado {
+                width: 100%;
+                background: linear-gradient(to left, #4d689e, 95%, rgba(255, 0, 0, 0));
+            }
+       }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="degradado">
+            <div class="textcontainer">
+                <div class="text1">
+                    <h1 id="title">Creative</h1>
+                </div>
+                <div class="text2">
+                    <p id="subtitle">Project</p>
+                </div>
+                <div class="text3">
+                    <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minus non, odio quibusdam dolore ipsam reiciendis recusandae vero officiis quidem porro quam laborum cum unde impedit dolorem id perspiciatis facilis! Minus saepe dolores veniam! Porro maxime maiores ipsa sed.</p>
+                </div>
+                <div class="text-end me-4 mt-4">
+                    <a href="https://www.google.com" class="btn btn-custom" id="button">Ingrese aquí</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch(
+            "https://gist.githubusercontent.com/Minrex55/4dc91742aeeb8935a2cc7654c82d6ac7/raw/981f741b6d0db4d3d940ec024331b806e37f68e4/ejercicio.json"
+        )
+        .then((res)=>res.json())
+        .then((res)=>{
+            document.getElementById("title").textContent = res.title;
+            console.log(res.title)
+            document.getElementById("subtitle").textContent = res.title;
+            console.log(res.title)
+            document.getElementById("paragraph").textContent = res.title;
+            console.log(res.title)
+            document.getElementById("button").textContent = res.title;
+            console.log(res.title)
+        })
+        .catch((e)=>{console.log(e)})
+    </script>
+</body>
+</html>
